@@ -12,4 +12,28 @@ class KeyTest < Minitest::Test
     expected = (/[0-9]{5}/).match(key.random_key)
     assert expected, key.random_key
   end
+
+  def test_rotation_A
+    key = Key.new
+    expected = (/[0-9]{2}/).match(key.rotation_A)
+    assert expected, key.rotation_A
+  end
+
+  def test_rotation_B
+    key = Key.new
+    expected = (/[0-9]{2}/).match(key.rotation_B)
+    assert expected, key.rotation_B
+  end
+
+  def test_rotation_C
+    key = Key.new
+    expected = (/[0-9]{2}/).match(key.rotation_C)
+    assert expected, key.rotation_C
+  end
+
+  def test_rotation_D
+    key = Key.new
+    expected = (/[0-9]{2}/).match(key.rotation_D)
+    assert expected, key.rotation_D
+  end
 end
