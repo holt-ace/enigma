@@ -1,5 +1,3 @@
-
-require 'date'
 class Offset
   attr_reader :date
   def initialize
@@ -12,19 +10,19 @@ class Offset
     square.to_s[6..10]
   end
 
-  def offset_A
+  def offset_a
     last_four[0]
   end
 
-  def offset_B
+  def offset_b
     last_four[1]
   end
 
-  def offset_C
+  def offset_c
     last_four[2]
   end
 
-  def offset_D
+  def offset_d
     last_four[3]
   end
 end

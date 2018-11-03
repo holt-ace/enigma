@@ -1,4 +1,3 @@
-
 require_relative './key'
 require_relative './offset'
 class Shift
@@ -7,19 +6,19 @@ class Shift
     @offset = Offset.new
   end
 
-  def shift_A
-    @key.rotation_A.to_i + @offset.offset_A.to_i
+  def shift_a
+    @key.rotation_a.to_i + @offset.offset_a.to_i
   end
 
-  def shift_B
-    @key.rotation_B.to_i + @offset.offset_B.to_i
+  def shift_b
+    @key.rotation_b.to_i + @offset.offset_b.to_i
   end
 
-  def shift_C
-    @key.rotation_C.to_i + @offset.offset_C.to_i
+  def shift_c
+    @key.rotation_c.to_i + @offset.offset_c.to_i
   end
 
-  def shift_D
-    @key.rotation_D.to_i + @offset.offset_D.to_i
+  def shift_d
+    @key.rotation_d.to_i + @offset.offset_d.to_i
   end
 end

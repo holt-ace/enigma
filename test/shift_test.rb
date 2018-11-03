@@ -8,27 +8,27 @@ class ShiftTest < Minitest::Test
     assert_instance_of Shift, shift
   end
 
-  def test_calculate_shift_A
+  def test_calculate_shift_a
     shift = Shift.new
 
-    assert Integer, shift.shift_A
+    assert Integer, shift.shift_a
   end
 
-  def test_calculate_shift_B
+  def test_calculate_shift_b
     shift = Shift.new
 
-    assert Integer, shift.shift_B
+    assert Integer, shift.shift_b
   end
 
-  def test_calculate_shift_C
+  def test_calculate_shift_c
     shift = Shift.new
 
-    assert Integer, shift.shift_C
+    assert Integer, shift.shift_c
   end
 
-  def test_calculate_shift_D
+  def test_calculate_shift_d
     shift = Shift.new
 
-    assert Integer, shift.shift_D
+    assert Integer, shift.shift_d
   end
 end
