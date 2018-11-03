@@ -1,3 +1,4 @@
+
 require './test/test_helper'
 require './lib/offset'
 
@@ -28,20 +29,17 @@ class OffsetTest < Minitest::Test
     offset = Offset.new
     expected = /[0-9]{1}/.match(offset.offset_B)
     assert expected
-
   end
 
   def test_offset_C
     offset = Offset.new
     expected = /[0-9]{1}/.match(offset.offset_C)
     assert expected
-
   end
 
   def test_offset_D
     offset = Offset.new
     expected = /[0-9]{1}/.match(offset.offset_D)
     assert expected
-
   end
 end

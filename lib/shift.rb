@@ -1,3 +1,4 @@
+
 require_relative './key'
 require_relative './offset'
 class Shift
@@ -21,6 +22,4 @@ class Shift
   def shift_D
     @key.rotation_D.to_i + @offset.offset_D.to_i
   end
-
-
 end
