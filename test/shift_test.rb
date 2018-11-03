@@ -1,3 +1,4 @@
+
 require './test/test_helper'
 require './lib/shift'
 
@@ -12,16 +13,19 @@ class ShiftTest < Minitest::Test
 
     assert Integer, shift.shift_A
   end
+
   def test_calculate_shift_B
     shift = Shift.new
 
     assert Integer, shift.shift_B
   end
+
   def test_calculate_shift_C
     shift = Shift.new
 
     assert Integer, shift.shift_C
   end
+
   def test_calculate_shift_D
     shift = Shift.new
 

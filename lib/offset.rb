@@ -1,3 +1,4 @@
+
 require 'date'
 class Offset
   attr_reader :date
@@ -6,8 +7,8 @@ class Offset
   end
 
   def last_four
-    numeric = (@date.to_time.to_i)
-    square = numeric ** 2
+    numeric = @date.to_time.to_i
+    square = numeric**2
     square.to_s[6..10]
   end
 
