@@ -9,7 +9,7 @@ class KeyTest < Minitest::Test
 
   def test_generate_random_key_with_padded_zeroes
     key = Key.new
-    expected = [Integer, Integer, Integer, Integer, Integer]
-    assert_equal expected, key.random_key
+    expected = (/[0-9]{5}/).match(key.random_key)
+    assert expected, key.random_key
   end
 end
