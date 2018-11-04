@@ -3,10 +3,10 @@ require './lib/enigma'
 require './lib/shift'
 
 class EnigmaTest < Minitest::Test
-
   def setup
     @shift = Shift.new
   end
+
   def test_it_exists
     enigma = Enigma.new
     assert_instance_of Enigma, enigma
@@ -20,7 +20,7 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Hash, encrypt
     assert_equal 3, encrypt.length
     assert encrypt.member?(:encryption)
-    valid = (/[a-z,\s]/)
+    valid = /[a-z,\s]/
     expected = { encryption: valid, key: key, date: date }
     actual = encrypt
     assert_equal expected, actual
