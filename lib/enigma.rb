@@ -1,26 +1,28 @@
-
 require_relative './shift'
+#turns the information given into workable hashes
 class Enigma
   def initialize
     @shift = Shift.new
   end
 
   def encrypt(message, key = @shift.key, date = @shift.offset.format_date)
-    #helper method from Coder class that does the encoding if time permits
     encrypted = Hash.new
-    em = message.each_char do |char|
-      
-    end
-
-    encrypted[:encryption] = em
-    encrypted[:key] = key
-    encrypted[:date] = date
+    #helper method from Coder class that does the encoding?
+    #(i'll have to make a Message class that gets the message from message.txt)
+    #need to enumerate over the string and change specific indeces
+    #use .rotate possibly with indeces?
+    #should go here
+    encrypted[:encryption] = em; encrypted[:key] = key; encrypted[:date] = date
     encrypted
   end
 
   def decrypt(ciphertext, key = @shift.key, date = @shift.offset.format_date)
-    #helper method from Coder class that does the decoding
-
+    decrypted = Hash.new
+    #helper method from Coder class that does the decoding?
+    #need to enumerate over the string and change specific indeces
+    #use .rotate possibly with indeces?
+    #should go here
+    decrypted[:decryption] = dm; decrypted[:key] = key; decrypted[:date] = date
+    decrypted
   end
-
 end

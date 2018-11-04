@@ -1,3 +1,4 @@
+#calculates offset based on today's date and stores the date in correct format
 class Offset
   attr_reader :date,
               :format_date
