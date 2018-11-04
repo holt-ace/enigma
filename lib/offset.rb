@@ -3,7 +3,7 @@ class Offset
               :format_date
   def initialize
     @date = Date.today
-    @format_date = @date.strftime("%m, %d, %y")
+    @format_date = @date.strftime("%m%d%y")
   end
 
   def last_four
