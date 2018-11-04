@@ -1,5 +1,6 @@
 require_relative './key'
 require_relative './offset'
+#uses the key and offset objects to calculate total shift
 class Shift
   attr_reader :key, :offset
   def initialize

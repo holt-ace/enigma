@@ -1,3 +1,4 @@
+#makes a random key and calculates rotation based on that key
 class Key
   attr_reader :random_key
   def initialize
