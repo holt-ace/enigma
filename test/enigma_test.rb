@@ -26,14 +26,12 @@ class EnigmaTest < Minitest::Test
   def test_decrypt
     skip
     enigma = Enigma.new
-    key = @shift.key
-    date = @shift.offset.date
-    encrypt = enigma.encrypt('hello world', key, date)
-    decrypt = enigma.decrypt(encrypt[:encryption], key, date)
+    encrypt = enigma.encrypt('hello world', "02715", "040895")
+    decrypt = enigma.decrypt(encrypt[:encryption], "02715", "040895")
     assert_instance_of Hash, decrypt
     assert_equal 3, decrypt.length
     assert decrypt.member?(:decryption)
-    expected = { decryption: 'hello world', key: key, date: date }
+    expected = { decryption: 'hello world', key: "02715", date: "040895" }
     actual = decrypt
     assert_equal expected, actual
   end
