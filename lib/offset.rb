@@ -1,7 +1,9 @@
 class Offset
-  attr_reader :date
+  attr_reader :date,
+              :format_date
   def initialize
     @date = Date.today
+    @format_date = @date.strftime("%m, %d, %y")
   end
 
   def last_four
