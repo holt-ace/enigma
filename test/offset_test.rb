@@ -19,27 +19,27 @@ class OffsetTest < Minitest::Test
     assert expected
   end
 
-  def test_offset_A
+  def test_offset_a
     offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_A)
+    expected = /[0-9]{1}/.match(offset.offset_a)
     assert expected
   end
 
-  def test_offset_B
+  def test_offset_b
     offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_B)
+    expected = /[0-9]{1}/.match(offset.offset_b)
     assert expected
   end
 
-  def test_offset_C
+  def test_offset_c
     offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_C)
+    expected = /[0-9]{1}/.match(offset.offset_c)
     assert expected
   end
 
-  def test_offset_D
+  def test_offset_d
     offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_D)
+    expected = /[0-9]{1}/.match(offset.offset_d)
     assert expected
   end
 end

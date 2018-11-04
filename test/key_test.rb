@@ -14,27 +14,27 @@ class KeyTest < Minitest::Test
     assert expected
   end
 
-  def test_rotation_A
+  def test_rotation_a
     key = Key.new
-    expected = /[0-9]{2}/.match(key.rotation_A)
+    expected = /[0-9]{2}/.match(key.rotation_a)
     assert expected
   end
 
-  def test_rotation_B
+  def test_rotation_b
     key = Key.new
-    expected = /[0-9]{2}/.match(key.rotation_B)
+    expected = /[0-9]{2}/.match(key.rotation_b)
     assert expected
   end
 
-  def test_rotation_C
+  def test_rotation_c
     key = Key.new
-    expected = /[0-9]{2}/.match(key.rotation_C)
+    expected = /[0-9]{2}/.match(key.rotation_c)
     assert expected
   end
 
-  def test_rotation_D
+  def test_rotation_d
     key = Key.new
-    expected = /[0-9]{2}/.match(key.rotation_D)
+    expected = /[0-9]{2}/.match(key.rotation_d)
     assert expected
   end
 end
