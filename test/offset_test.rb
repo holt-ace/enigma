@@ -7,42 +7,25 @@ class OffsetTest < Minitest::Test
     assert_instance_of Offset, offset
   end
 
+
+  def test_format_date_correctly
+    offset = Offset.new
+    assert_equal 6, offset.format_date.length
+    assert (/[0-9]{5}/).match(offset.format_date)
+  end
+
   def test_find_last_four_of_date
     offset = Offset.new
     expected = /[0-9]{4}/.match(offset.last_four)
     assert expected
   end
 
-  def test_offset_a
-    offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_a)
-    assert expected
-  end
-
-  def test_offset_b
-    offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_b)
-    assert expected
-  end
-
-  def test_offset_c
-    offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_c)
-    assert expected
-  end
-
-  def test_offset_d
-    offset = Offset.new
-    expected = /[0-9]{1}/.match(offset.offset_d)
-    assert expected
-  end
-
   def test_calculates_correct_with_given_arg
     offset = Offset.new("040895")
 
-    assert_equal "1", offset.offset_a
-    assert_equal "0", offset.offset_b
-    assert_equal "2", offset.offset_c
-    assert_equal "5", offset.offset_d
+    assert_equal 1, offset.offset_a
+    assert_equal 0, offset.offset_b
+    assert_equal 2, offset.offset_c
+    assert_equal 5, offset.offset_d
   end
 end
