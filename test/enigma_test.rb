@@ -1,11 +1,8 @@
 require './test/test_helper'
 require './lib/enigma'
-require './lib/shift'
 
 class EnigmaTest < Minitest::Test
-  def setup
-    @shift = Shift.new
-  end
+
 
   def test_it_exists
     enigma = Enigma.new
