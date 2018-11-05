@@ -16,18 +16,18 @@ class Offset
   end
 
   def offset_a
-    last_four[0]
+    last_four[0].to_i
   end
 
   def offset_b
-    last_four[1]
+    last_four[1].to_i
   end
 
   def offset_c
-    last_four[2]
+    last_four[2].to_i
   end
 
   def offset_d
-    last_four[3]
+    last_four[3].to_i
   end
 end
