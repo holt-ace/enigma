@@ -6,19 +6,13 @@ class Enigma
 
   def encrypt(message, key = Key.new, date = Offset.new.format_date)
     shift = Shift.new(key, date)
-    encrypted = Hash.new
     em = encode(message, shift)
-    encrypted[:encryption] = em; encrypted[:key] = key
-    encrypted[:date] = date
-    encrypted
+    { encryption: em, key: key, date: date}
   end
 
   def decrypt(ciphertext, key = Key.new, date = Offset.new.format_date)
     shift = Shift.new(key, date)
-    decrypted = Hash.new
     dm = decode(message, shift)
-    decrypted[:decryption] = dm; decrypted[:key] = key
-    decrypted[:date] = date
-    decrypted
+    { decrypted: dm, key: key, date: date}
   end
 end
