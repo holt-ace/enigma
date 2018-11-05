@@ -24,7 +24,6 @@ class EnigmaTest < Minitest::Test
   end
 
   def test_decrypt
-    skip
     enigma = Enigma.new
     encrypt = enigma.encrypt('hello world', "02715", "040895")
     decrypt = enigma.decrypt(encrypt[:encryption], "02715", "040895")

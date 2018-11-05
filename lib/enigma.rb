@@ -12,7 +12,7 @@ class Enigma
     #need to enumerate over the string and change specific indeces
     #use .rotate possibly with indeces?
     #should go here
-    encrypted[:encryption] = em; encrypted[:key] = key; encrypted[:date] = date
+    encrypted[:encryption] = message; encrypted[:key] = key; encrypted[:date] = date
     encrypted
   end
 
@@ -22,7 +22,7 @@ class Enigma
     #need to enumerate over the string and change specific indeces
     #use .rotate possibly with indeces?
     #should go here
-    decrypted[:decryption] = dm; decrypted[:key] = key; decrypted[:date] = date
+    decrypted[:decryption] = ciphertext; decrypted[:key] = key; decrypted[:date] = date
     decrypted
   end
 end
