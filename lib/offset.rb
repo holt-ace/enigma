@@ -1,4 +1,5 @@
 #calculates offset based on today's date and stores the date in correct format
+require 'date'
 class Offset
   attr_reader :format_date
   def initialize(date_string = nil)
