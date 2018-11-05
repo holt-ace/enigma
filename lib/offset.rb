@@ -1,15 +1,13 @@
 #calculates offset based on today's date and stores the date in correct format
 class Offset
-  attr_reader :date,
-              :format_date
+  attr_reader :format_date
   def initialize
-    @date = Date.today
-    @format_date = @date.strftime("%m%d%y")
+    @format_date = Date.today.strftime("%m%d%y")
   end
 
   def last_four
-    numeric = @date.to_time.to_i
-    square = numeric**2
+    numeric = @format_date.to_i
+    square = numeric**numeric
     square.to_s[6..10]
   end
 

@@ -6,12 +6,7 @@ class OffsetTest < Minitest::Test
     offset = Offset.new
     assert_instance_of Offset, offset
   end
-
-  def test_date_is_today
-    offset = Offset.new
-    assert_equal Date.today, offset.date
-  end
-
+  
   def test_find_last_four_of_date
     offset = Offset.new
     expected = /[0-9]{4}/.match(offset.last_four)
