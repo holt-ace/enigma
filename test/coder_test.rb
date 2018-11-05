@@ -3,21 +3,15 @@ require './lib/coder'
 require './lib/shift'
 
 class CoderTest < Minitest::Test
-  def test_it_exists
-    shift = Shift.new("02715", "040895")
-    coder = Coder.new(shift)
-    assert_instance_of Coder, coder
-  end
+  include Coder
 
   def test_it_encodes
     shift = Shift.new("02715", "040895")
-    coder = Coder.new(shift)
-    assert_equal "keder ohulw", coder.encode("hello world")
+    assert_equal "keder ohulw", encode("hello world", shift)
   end
 
   def test_it_decodes
     shift = Shift.new("02715", "040895")
-    coder = Coder.new(shift)
-    assert_equal "hello world", coder.decode("keder ohulw")
+    assert_equal "hello world", decode("keder ohulw", shift)
   end
 end
