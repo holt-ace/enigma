@@ -16,7 +16,7 @@ class KeyTest < Minitest::Test
   def test_given_argument_calculates_correctly
     key = Key.new('02715')
 
-    assert_equal 0o2, key.rotation_a
+    assert_equal 2, key.rotation_a
     assert_equal 27, key.rotation_b
     assert_equal 71, key.rotation_c
     assert_equal 15, key.rotation_d
