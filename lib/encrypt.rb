@@ -1,8 +1,9 @@
+
 require_relative 'enigma'
 enigma = Enigma.new
 key = Key.new.random_key
 date = Offset.new.format_date
-new_file = File.new(ARGV[1], "w")
+new_file = File.new(ARGV[1], 'w')
 
 File.foreach(ARGV[0]) do |line|
   new_message = enigma.encrypt(line, key, date)

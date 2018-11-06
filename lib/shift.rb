@@ -1,6 +1,6 @@
 require_relative './key'
 require_relative './offset'
-#uses the key and offset objects to calculate total shift
+# uses the key and offset objects to calculate total shift
 class Shift
   attr_reader :key, :offset
   def initialize(key_string = nil, date_string = nil)
@@ -22,5 +22,9 @@ class Shift
 
   def shift_d
     @key.rotation_d + @offset.offset_d
+  end
+
+  def all_shifts
+    [shift_a, shift_b, shift_c, shift_d]
   end
 end
