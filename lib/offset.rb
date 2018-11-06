@@ -3,11 +3,11 @@ require 'date'
 class Offset
   attr_reader :format_date
   def initialize(date_string = nil)
-    if date_string == nil
-      @format_date = Date.today.strftime("%m%d%y")
-    else
-      @format_date = date_string
-    end
+    @format_date = if date_string.nil?
+                     Date.today.strftime('%m%d%y')
+                   else
+                     date_string
+                   end
   end
 
   def last_four
