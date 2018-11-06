@@ -1,8 +1,13 @@
 # makes a random key and calculates rotation based on that key
 class Key
   attr_reader :random_key
-  def initialize(key_string = generate_key)
-    @random_key = key_string
+  
+  def initialize(key_string = nil)
+    @random_key = if key_string.nil?
+                    generate_key
+                  else
+                    key_string
+                  end
   end
 
   def generate_key
