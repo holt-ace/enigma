@@ -10,22 +10,19 @@ module Coder
   end
 
   def code(message, shift, direction)
-    chars = [*'a'..'z'] << ' '
     chunks = message.downcase.scan(/.{1,4}/)
     chunks.map do |chunk|
       chunk.split('').map.with_index do |letter, map_index|
-        index = chars.find_index(letter)
-        edge_cases(index, shift, direction, map_index, letter)
+        rotation = direction * shift.all_shifts[map_index]
+        code_letter(rotation, letter)
       end
     end.flatten.join
   end
 
-  def edge_cases(index, shift, direction, map_index, letter)
+  def code_letter(rotation, letter)
     chars = [*'a'..'z'] << ' '
-    if index
-      chars.rotate(direction * shift.all_shifts[map_index])[index]
-    else
-      letter
-    end
+    index = chars.find_index(letter)
+    return letter unless index
+    chars.rotate(rotation)[index]
   end
 end
