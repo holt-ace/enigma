@@ -8,5 +8,5 @@ File.foreach(ARGV[0]) do |line|
   new_message = enigma.encrypt(line, key, date)
   new_file.puts(new_message[:encryption])
 end
+puts "Created: '#{ARGV[1]}' with the key: #{key} and date: #{date}"
 new_file.close
-puts "Created '#{ARGV[1]}' with the key #{key} and date #{date}"
