@@ -23,4 +23,8 @@ class Shift
   def shift_d
     @key.rotation_d + @offset.offset_d
   end
+
+  def all_shifts
+    [shift_a, shift_b, shift_c, shift_d]
+  end
 end
