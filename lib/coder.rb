@@ -15,8 +15,17 @@ module Coder
     chunks.map do |chunk|
       chunk.split('').map.with_index do |letter, map_index|
         index = chars.find_index(letter)
-        chars.rotate(direction * shift.all_shifts[map_index])[index]
+        edge_cases(index, shift, direction, map_index, letter)
       end
     end.flatten.join
+  end
+
+  def edge_cases(index, shift, direction, map_index, letter)
+    chars = [*'a'..'z'] << ' '
+    if index
+      chars.rotate(direction * shift.all_shifts[map_index])[index]
+    else
+      letter
+    end
   end
 end
