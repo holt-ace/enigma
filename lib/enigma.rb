@@ -12,7 +12,7 @@ class Enigma
 
   def decrypt(ciphertext, key = Key.new, date = Offset.new.format_date)
     shift = Shift.new(key, date)
-    dm = decode(message, shift)
+    dm = decode(ciphertext, shift)
     { decrypted: dm, key: key, date: date}
   end
 end
