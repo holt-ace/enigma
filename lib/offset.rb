@@ -2,12 +2,12 @@ require 'date'
 # calculates offset based on today's date and stores the date in correct format
 class Offset
   attr_reader :format_date
-  def initialize(date_string = nil)
-    @format_date = if date_string.nil?
-                     Date.today.strftime('%m%d%y')
-                   else
-                     date_string
-                   end
+  def initialize(date_string = today_formatted)
+    @format_date = date_string
+  end
+
+  def today_formatted
+    Date.today.strftime('%m%d%y')
   end
 
   def last_four
