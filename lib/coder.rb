@@ -1,12 +1,11 @@
-#this does me encoding and decoding, it will inherit into Enigma
+# this module does my encoding and decoding
 require_relative 'shift'
 module Coder
-
   def encode(message, shift)
-    chars = [*"a".."z"] << " "
+    chars = [*'a'..'z'] << ' '
     chunks = message.downcase.scan(/.{1,4}/)
     encrypted_chunks = chunks.map do |chunk|
-      chunk.split("").map.with_index do |letter, i|
+      chunk.split('').map.with_index do |letter, i|
         index = chars.find_index(letter)
         if i == 0
           chars.rotate(shift.shift_a)[index]
@@ -23,10 +22,10 @@ module Coder
   end
 
   def decode(ciphertext, shift)
-    chars = [*"a".."z"] << " "
+    chars = [*'a'..'z'] << ' '
     chunks = ciphertext.downcase.scan(/.{1,4}/)
     decrypted_chunks = chunks.map do |chunk|
-      chunk.split("").map.with_index do |letter, i|
+      chunk.split('').map.with_index do |letter, i|
         index = chars.find_index(letter)
         if i == 0
           chars.rotate(-shift.shift_a)[index]
@@ -41,5 +40,4 @@ module Coder
     end
     decrypted_chunks.flatten.join
   end
-
 end
