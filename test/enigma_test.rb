@@ -11,10 +11,7 @@ class EnigmaTest < Minitest::Test
 
   def test_encrypt
     enigma = Enigma.new
-    encrypt = enigma.encrypt("hello world", "02715", "040895")
-    assert_instance_of Hash, encrypt
-    assert_equal 3, encrypt.length
-    assert encrypt.member?(:encryption)
+    encrypt = enigma.encrypt('hello world', "02715", "040895")
     expected = { encryption: 'keder ohulw', key: "02715", date: "040895" }
     actual = encrypt
     assert_equal expected, actual
@@ -22,11 +19,7 @@ class EnigmaTest < Minitest::Test
 
   def test_decrypt
     enigma = Enigma.new
-    encrypt = enigma.encrypt('hello world', "02715", "040895")
-    decrypt = enigma.decrypt(encrypt[:encryption], "02715", "040895")
-    assert_instance_of Hash, decrypt
-    assert_equal 3, decrypt.length
-    assert decrypt.member?(:decryption)
+    decrypt = enigma.decrypt('keder ohulw', "02715", "040895")
     expected = { decryption: 'hello world', key: "02715", date: "040895" }
     actual = decrypt
     assert_equal expected, actual
